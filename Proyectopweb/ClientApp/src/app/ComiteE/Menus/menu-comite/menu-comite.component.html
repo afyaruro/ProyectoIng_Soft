@@ -1,0 +1,63 @@
+<div class="contendeor">
+
+<app-header></app-header>
+
+    <div class="contenedor_menu">
+
+        <nav class="menu">
+            <ul class="contenedor_opciones">
+
+                <li class="nav-item opcion">
+                    <a class="nav-link" [routerLink]='["/menuComite/home"]'>Home</a>
+                  </li>
+                
+                <li class="nav-item dropdown opcion">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Registrar
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" [routerLink]="['/menuComite/regEvaluador']">Registrar Evaluador</a></li>
+                      <li><a class="dropdown-item" href="#">Registrar Productividad Academica</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown opcion">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Consultar
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" [routerLink]='["/menuComite/consDocente"]'>Consultar Docentes</a></li>
+                      <li><a class="dropdown-item" [routerLink]='["/menuComite/consEvaluador"]'>Consultar Evaluador</a></li>
+                      <li><a class="dropdown-item" href="#">Consultar Productividad Academica</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item opcion">
+                    <a class="nav-link" href="#">Asignar Pares Evaluadores</a>
+                  </li>
+
+                  <li class="nav-item opcion">
+                    <a class="nav-link" href="#">Enviar Correcciones</a>
+                  </li>
+
+                  <li class="nav-item dropdown opcion">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Otros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Modificar Productividad Academica</a></li>
+                      <li><a class="dropdown-item" href="#">Eliminar Productividad Academica</a></li>
+                      <li><a class="dropdown-item" [routerLink]='["/loginC"]'>Salir</a></li>
+                    </ul>
+                  </li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="contenedor_contenido">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

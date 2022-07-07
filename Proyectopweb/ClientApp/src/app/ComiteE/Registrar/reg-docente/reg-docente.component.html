@@ -1,0 +1,83 @@
+<div class="contenedor">
+
+    <div class="contenedor_formulario">
+
+    <h2 class="titulo">Registro de Docente</h2>
+    <div class="parrafo">
+        <p class="parrafo1">Datos Personales</p>
+    </div>
+    
+    <div class="formulario_1">
+
+        <input type="text" autocomplete="off" placeholder="Nombre de Usuario" [(ngModel)]="docente.nombre_Usuario" name="nombre_Usuario" class="input" >
+        <input type="password" autocomplete="off" placeholder="Contraseña" name="password" [(ngModel)]="docente.password" class="input" >
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="tipoIdentificacion">
+            <option selected disabled value="Tipo de Identificacion">Tipo de Identificacion</option>
+            <option value="Cedula">Cedula</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Targeta Identidad">Targeta Identidad</option>
+            <option value="Registro Civil">Registro Civil</option>
+          </select>
+
+        <input type="text" autocomplete="off" placeholder="Documento de Identidad" name="identificacion" [(ngModel)]="docente.identificacion" class="input"  >
+        <input type="text" autocomplete="off" placeholder="Nombres" name="nombres" [(ngModel)]="docente.nombres" class="input" >
+        <input type="text" autocomplete="off" placeholder="Primer Apellido" name="primer_Apellido" [(ngModel)]="docente.primer_Apellido" class="input" >
+        <input type="text" autocomplete="off" placeholder="Segundo Apellido" name="segundo_Apellido" [(ngModel)]="docente.segundo_Apellido" class="input" >
+        <input type="text" autocomplete="off" placeholder="Numero de Celular" name="numero_Celular" [(ngModel)]="docente.numero_Celular" class="input" >
+        <input type="text" autocomplete="off" placeholder="Correo Electronico" name="correo" [(ngModel)]="docente.correo" class="input" >
+        <input type="text" autocomplete="off" placeholder="Departamento" name="departamento" [(ngModel)]="docente.departamento" class="input" >
+        <input type="text" autocomplete="off" placeholder="Municipio" name="municipio" [(ngModel)]="docente.municipio" class="input" >
+        <input type="text" autocomplete="off" placeholder="Dirreccion" name="direccion" [(ngModel)]="docente.direccion" class="input" >
+
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="sexo">
+            <option selected disabled value="Sexo">Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+
+        <input type="text" autocomplete="off" placeholder="Programa Academico" name="programa" [(ngModel)]="docente.programa" class="input" >
+        <input type="text" autocomplete="off" placeholder="Facultad" name="facultad" [(ngModel)]="docente.facultad" class="input" >
+
+    </div>
+
+    <div class="parrafo">
+        <p class="parrafo1">Formación Academica</p>
+    </div>
+
+    <div class="formulario_2">
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="profesional">
+            <option selected disabled value="Profesional">Profesional</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="especializacion">
+            <option selected disabled value="Especializacion">Especializacion</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="maestria">
+            <option selected disabled value="Maestria">Maestria</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="doctorado">
+            <option selected disabled value="Doctorado">Doctorado</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+       
+    </div>
+    <div class="contenedor_btn">
+        <a  class="btn" [routerLink]='["/loginC"]'>Volver</a>
+        <a  class="btn" (click)="add()" >Registrarse</a>
+    </div>
+</div>   
+
+</div>

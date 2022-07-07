@@ -1,0 +1,24 @@
+<div class="contenedor_login">
+    <div class="contenedor_input">
+        
+            <h2 class="titulo">Iniciar Sesión</h2>
+
+            <div>
+            <select name="tipo_user" id="tipo_user" [(ngModel)]="tipousuario" class="input_text">
+                <option selected disabled value="Tipo de Usuario">Tipo de Usuario</option>
+                <option value="Docente">Docente</option>
+                <option value="Evaluador">Evaluador</option>
+                <option value="Comite">Comite</option>
+            </select>
+            <input type="text" autocomplete="off" [(ngModel)]="nombreUser" placeholder="Nombre de Usuario" class="input_text">
+            <input type="password" autocomplete="off" [(ngModel)]="password" placeholder="Contraseña" class="input_text">
+
+            </div>
+            <p>Crear cuenta para docente <a class="registrarse" [routerLink]='["/registro_docente"]'>Click aqui</a></p>
+            <div class="cont_btn">
+                <a class="btn btn_volver" >Volver</a>
+                <a class="btn btn_ingresar"  (click)="Ingresar()" >Ingresar</a>
+            </div>
+
+    </div>
+</div>

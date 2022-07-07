@@ -1,0 +1,34 @@
+<div class="contenedor">
+
+    <h2 class="titulo">Registrar Evaluador</h2>
+
+    <div class="contenedor_formulario">
+
+        <input type="text" autocomplete="off" placeholder="Nombre de Usuario" [(ngModel)]="evaluador.nombre_Usuario" name="nombre_Usuario" class="input" >
+        <input type="password" autocomplete="off" placeholder="Contraseña" name="password" [(ngModel)]="evaluador.password" class="input" >
+
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="tipoIdentificacion">
+            <option selected disabled value="Tipo de Identificacion">Tipo de Identificacion</option>
+            <option value="Cedula">Cedula</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Targeta Identidad">Targeta Identidad</option>
+            <option value="Registro Civil">Registro Civil</option>
+          </select>
+
+        <input type="text" autocomplete="off" placeholder="Documento de Identidad" name="identificacion" [(ngModel)]="evaluador.identificacion" class="input"  >
+        <input type="text" autocomplete="off" placeholder="Nombres" name="nombres" [(ngModel)]="evaluador.nombres" class="input" >
+        <input type="text" autocomplete="off" placeholder="Apellidos" name="apellidos" [(ngModel)]="evaluador.apellidos" class="input" >
+        
+        <select class="input" aria-label="Default select example disabled" [(ngModel)]="sexo">
+            <option selected disabled value="Sexo">Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+
+          <input type="text" autocomplete="off" placeholder="Correo" name="correo" [(ngModel)]="evaluador.correo" class="input" >
+
+          
+    </div>
+
+    <div class="btn_contenedor"><a class="btn" (click)="add()">Registrar Evaluador</a></div>
+</div>

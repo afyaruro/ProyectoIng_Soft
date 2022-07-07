@@ -1,0 +1,43 @@
+
+
+<div class="row">
+    <div class="cont_input">
+        <input [(ngModel)]="searchText" type="text" class="input" placeholder="Buscar docente por identificacion">
+    </div>
+
+</div>
+
+<div class="contenedor">
+<table class="table table-striped " *ngIf='docentes && docentes.length'>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tipo identificación</th>
+            <th scope="col">identificación</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Primer Apellido</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Correo </th>
+        </tr>
+    </thead>
+    
+    <tbody >
+        
+        <tr *ngFor="let docente of docentes|filtroDocente:searchText; index as i ">
+
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ docente.tipo_Identificacion }} </td>
+            <td>{{ docente.identificacion }} </td>
+            <td>{{ docente.nombres }} </td>
+            <td>{{ docente.primer_Apellido }} </td>
+            <td>{{ docente.segundo_Apellido }} </td>
+            <td>{{ docente.sexo }} </td>
+            <td>{{ docente.correo }} </td>
+
+        </tr>
+    </tbody>
+</table>
+
+</div>
+

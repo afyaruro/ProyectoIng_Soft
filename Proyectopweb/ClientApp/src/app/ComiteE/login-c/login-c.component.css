@@ -1,0 +1,105 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.contenedor_login{
+    width: 100%;
+    min-height: 100vh;
+    background: url(../../../assets/undraw_login_re_4vu2.svg), linear-gradient(15deg, #05383b 0%, #0cb4d1 100%);
+    background-repeat: no-repeat;
+    background-size: 50%, 100%;
+    background-position: right 50%;
+    padding: 0.01%;
+}
+
+.contenedor_input{
+    width: 30%;
+    min-height: 50vh;
+    margin-top: 25vh;
+    margin-left: 10vw;
+    padding-top: 1%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.61);
+    box-shadow: 0 0 20px #05383b;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+
+}
+
+.registrarse{
+    text-decoration: none;
+}
+
+.titulo{
+    margin-bottom: 3%;
+    color: #548080;
+}
+
+.input_text{
+    width: 80%;
+    margin: 0% 10%;
+    margin-bottom: 3vh;
+    border-radius: 5px;
+    border: 2px solid #a6acac;
+    padding: 10px;
+    outline: none;
+    
+}
+.input_text:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px dodgerblue;
+}
+
+.btn{
+    width: 100px;
+    color:dodgerblue;
+    border: 1px solid dodgerblue;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.btn:hover{
+    
+    color:rgb(255, 255, 255);
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+
+}
+
+@media(max-width: 1000px){
+
+    
+.contenedor_input{
+    width: 40%;
+}
+}
+
+@media(max-width: 700px){
+    .contenedor_login{
+        background-position: center 50%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contenedor_input{
+        width: 60%;
+        margin-left: 0%;
+        margin-top: 20vh;
+        margin-bottom: 25vh;
+        
+    }
+    }
+
+@media(max-width: 500px){
+    .contenedor_login{
+        background-position: center 50%;
+    }
+
+    
+.contenedor_input{
+    width: 70%;
+}
+}

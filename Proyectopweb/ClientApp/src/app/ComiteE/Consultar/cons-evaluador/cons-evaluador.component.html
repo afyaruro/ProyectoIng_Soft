@@ -1,0 +1,39 @@
+
+    <div class="row">
+        <div class="cont_input">
+            <input [(ngModel)]="searchText" type="text" class="input" placeholder="Buscar evaluador por identificacion">
+        </div>
+    
+    </div>
+
+    <div class="contenedor">
+    <table class="table table-striped" *ngIf='evaluadores && evaluadores.length'>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tipo identificación</th>
+                <th scope="col">identificación</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Nombre de Usuario</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Correo </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let evaluador of evaluadores|filtroEvaluador:searchText; index as i ">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ evaluador.tipo_identificacion }} </td>
+                <td>{{ evaluador.identificacion }} </td>
+                <td>{{ evaluador.nombres }} </td>
+                <td>{{ evaluador.apellidos }} </td>
+                <td>{{ evaluador.nombre_Usuario }} </td>
+                <td>{{ evaluador.password }} </td>
+                <td>{{ evaluador.sexo }} </td>
+                <td>{{ evaluador.correo }} </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>

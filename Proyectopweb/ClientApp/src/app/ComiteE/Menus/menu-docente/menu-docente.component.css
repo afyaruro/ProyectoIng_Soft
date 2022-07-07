@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contenedor_menu{
+    border-bottom: 2px solid rgb(34, 211, 11);
+    padding-top: 30px;
+    margin: 10px;
+    width: 70%;
+    margin: 0% auto;
+}
+
+.contenedor_opciones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.opcion{
+    list-style: none;
+}
+
+.contenedor_contenido{
+    width: 90%;
+    height: 70vh;
+    margin: 15px auto;
+}

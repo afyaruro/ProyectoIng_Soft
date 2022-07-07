@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+.contenedor{
+    width: 100%;
+    min-height: 100vh;
+    background: url(../../../../assets/undraw_domain_names_re_0uun.svg), linear-gradient(15deg, #05383b 0%, #0cb4d1 100%);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%, 100%;
+    padding: 0.01%;
+    
+}
+
+.contenedor_formulario{
+    width: 40%;
+    min-height: 500px;
+    margin: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.61);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-shadow: 0 0 8px #05383b;
+}
+
+.formulario_1{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.formulario_2{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check{
+    margin: 0% 5px;
+}
+
+.label{
+    margin-left: 3px;
+}
+
+.titulo{
+    margin-top: 2%;
+    margin-bottom: 3%;
+    color: #548080;
+}
+
+.parrafo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    width: 85%;
+}
+
+.parrafo1{
+    color: #548080;
+    font-weight: 600;
+}
+
+.input{
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #a6acac;
+    outline: none;
+}
+
+.input:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px dodgerblue;
+}
+
+.btn{
+width: 100px;
+color:dodgerblue;
+border: 1px solid dodgerblue;
+border-radius: 20px;
+margin: 20px;
+}
+.btn:hover{
+    
+    color:rgb(255, 255, 255);
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
+
+}
