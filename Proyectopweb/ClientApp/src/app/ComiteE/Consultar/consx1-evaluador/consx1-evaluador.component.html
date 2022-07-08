@@ -1,6 +1,6 @@
 <div class="contenedor">
 
-    <h2 class="titulo">Modificar Informacion</h2>
+    <h2 class="titulo">Consultar Informacion</h2>
 
     <div class="contenedor_formulario">
 
@@ -8,19 +8,19 @@
             <p class="parrafo1">Nombre de Usuario</p>
         </div>
 
-        <input type="text" autocomplete="off"  placeholder="Nombre de Usuario" [(ngModel)]="evaluador.nombre_Usuario" name="nombre_Usuario" class="input" >
+        <input type="text" autocomplete="off" disabled placeholder="Nombre de Usuario" [(ngModel)]="evaluador.nombre_Usuario" name="nombre_Usuario" class="input" >
         
         <div class="parrafo">
             <p class="parrafo1">Contraseña</p>
         </div>
         
-        <input type="text" autocomplete="off"  placeholder="Contraseña" name="password" [(ngModel)]="evaluador.password" class="input" >
+        <input type="text" autocomplete="off" disabled placeholder="Contraseña" name="password" [(ngModel)]="evaluador.password" class="input" >
 
         <div class="parrafo">
             <p class="parrafo1">Tipo de Identificacion</p>
         </div>
        
-        <select class="input"  aria-label="Default select example disabled" [(ngModel)]="tipoIdentificacion">
+        <select class="input" disabled aria-label="Default select example disabled" [(ngModel)]="tipoIdentificacion">
             <option selected disabled value="Tipo de Identificacion">Tipo de Identificacion</option>
             <option value="Cedula">Cedula</option>
             <option value="Pasaporte">Pasaporte</option>
@@ -32,25 +32,25 @@
             <p class="parrafo1">Documento de Identidad</p>
         </div>
 
-        <input type="text" autocomplete="off"  placeholder="Documento de Identidad" name="identificacion" [(ngModel)]="evaluador.identificacion" class="input"  >
+        <input type="text" autocomplete="off" disabled placeholder="Documento de Identidad" name="identificacion" [(ngModel)]="evaluador.identificacion" class="input"  >
         
         <div class="parrafo">
             <p class="parrafo1">Nombres</p>
         </div>
 
-        <input type="text" autocomplete="off"  placeholder="Nombres" name="nombres" [(ngModel)]="evaluador.nombres" class="input" >
+        <input type="text" autocomplete="off" disabled placeholder="Nombres" name="nombres" [(ngModel)]="evaluador.nombres" class="input" >
        
         <div class="parrafo">
             <p class="parrafo1">Apellidos</p>
         </div>
        
-        <input type="text" autocomplete="off"  placeholder="Apellidos" name="apellidos" [(ngModel)]="evaluador.apellidos" class="input" >
+        <input type="text" autocomplete="off" disabled placeholder="Apellidos" name="apellidos" [(ngModel)]="evaluador.apellidos" class="input" >
         
         <div class="parrafo">
             <p class="parrafo1">Sexo</p>
         </div>
         
-        <select class="input" aria-label="Default select example disabled"  [(ngModel)]="sexo">
+        <select class="input" aria-label="Default select example disabled" disabled [(ngModel)]="sexo">
             <option selected disabled value="Sexo">Sexo</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
@@ -60,7 +60,7 @@
             <p class="parrafo1">Estado</p>
         </div>
 
-        <select class="input" aria-label="Default select example disabled"  [(ngModel)]="estado">
+        <select class="input" aria-label="Default select example disabled" disabled [(ngModel)]="estado">
             <option selected disabled value="Estado">Estado</option>
             <option value="Activo">Activo</option>
             <option value="Inactivo">Inactivo</option>
@@ -70,11 +70,9 @@
             <p class="parrafo1">Correo</p>
         </div>
          
-          <input type="text" autocomplete="off"  placeholder="Correo" name="correo" [(ngModel)]="evaluador.correo" class="input" >
+          <input type="text" autocomplete="off" disabled placeholder="Correo" name="correo" [(ngModel)]="evaluador.correo" class="input" >
 
           
     </div>
-
-    <div class="btn_contenedor"><a class="btn" (click)="Modificar()">Modificar Evaluador</a></div>
 
 </div>

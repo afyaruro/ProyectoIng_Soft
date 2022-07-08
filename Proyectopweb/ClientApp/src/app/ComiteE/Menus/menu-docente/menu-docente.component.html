@@ -12,7 +12,7 @@
                     </li>
                     
                     <li class="nav-item opcion">
-                        <a class="nav-link" href="#">Registrar Solicitud</a>
+                        <a class="nav-link" [routerLink]='["/menuDocente/regSolicitud"]'>Registrar Solicitud</a>
                     </li>
                     
     
@@ -21,7 +21,7 @@
                           Consultar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Consultar Informacion Personal</a></li>
+                          <li><a class="dropdown-item" [routerLink]='["/menuDocente/consx1Docente"]'>Consultar Informacion Personal</a></li>
                           <li><a class="dropdown-item" href="#">Consultar Estado de Solicitud</a></li>
                         </ul>
                       </li>
@@ -31,9 +31,9 @@
                           Otros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Modificar Informacion Personal</a></li>
-                          <li><a class="dropdown-item" href="#">Eliminar Cuenta</a></li>
-                          <li><a class="dropdown-item" [routerLink]='["/loginC"]'>Salir</a></li>
+                          <li><a class="dropdown-item" [routerLink]='["/menuDocente/modDocente"]'>Modificar Informacion Personal</a></li>
+                          <li><a class="dropdown-item" (click)="Eliminar()" >Eliminar Cuenta</a></li>
+                          <li><a class="dropdown-item"  (click)="salir()">Salir</a></li>
                         </ul>
                       </li>
     

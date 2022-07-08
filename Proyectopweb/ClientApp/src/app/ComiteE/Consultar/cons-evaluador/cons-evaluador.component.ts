@@ -14,9 +14,12 @@ export class ConsEvaluadorComponent implements OnInit {
   constructor(private evaluadorService: EvaluadorService) { }
 
   ngOnInit() {
+    this.evaluadores=this.evaluadorService.get();
+
+    /*
     this.evaluadorService.get().subscribe(result => {
       this.evaluadores = result;
-   });
+   });*/
   }
 
 }

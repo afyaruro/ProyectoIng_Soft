@@ -12,11 +12,11 @@
                     </li>
                     
                     <li class="nav-item opcion">
-                        <a class="nav-link" href="#">Evaluar Solicitud</a>
+                        <a class="nav-link" [routerLink]='["/menuEvaluador/home"]'>Evaluar Solicitud</a>
                     </li>
                     
                     <li class="nav-item opcion">
-                        <a class="nav-link" href="#">Consultar Informacion Personal</a>
+                        <a class="nav-link" [routerLink]='["/menuEvaluador/consx1Evaluador"]'>Consultar Informacion Personal</a>
                     </li>
     
                       <li class="nav-item dropdown opcion">
@@ -24,9 +24,9 @@
                           Otros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Modificar Informacion Personal</a></li>
-                          <li><a class="dropdown-item" href="#">Inactivar Cuenta</a></li>
-                          <li><a class="dropdown-item" [routerLink]='["/loginC"]'>Salir</a></li>
+                          <li><a class="dropdown-item" [routerLink]='["/menuEvaluador/modEvaluador"]'>Modificar Informacion Personal</a></li>
+                          <li><a class="dropdown-item" (click)="Inactivar()">Inactivar Cuenta</a></li>
+                          <li><a class="dropdown-item" [routerLink]='["/loginC"]' (click)="salir()">Salir</a></li>
                         </ul>
                       </li>
     

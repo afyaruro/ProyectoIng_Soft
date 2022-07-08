@@ -26,7 +26,7 @@ export class RegDocenteComponent implements OnInit {
   }
 
   add(){
-    
+  
     this.docente.tipo_Identificacion = this.tipoIdentificacion;
     this.docente.sexo = this.sexo;
     this.docente.profesional = this.profesional;
@@ -34,7 +34,7 @@ export class RegDocenteComponent implements OnInit {
     this.docente.maestria = this.maestria;
     this.docente.doctorado = this.doctorado;
 
-    alert(this.docenteService.post(this.docente));
+        alert(this.docenteService.post(this.docente));
 
     /*
     this.docente.tipo_Identificacion = this.tipoIdentificacion;

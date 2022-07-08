@@ -58,6 +58,8 @@ import { HomeComponent } from './ComiteE/home/home.component';
 import { HeaderComponent } from './ComiteE/header/header.component';
 import { FiltroDocentePipe } from './ComiteE/pipe/filtro-docente.pipe';
 import { FiltroEvaluadorPipe } from './ComiteE/pipe/filtro-evaluador.pipe';
+import { Consx1DocenteComponent } from './ComiteE/Consultar/consx1-docente/consx1-docente.component';
+import { Consx1EvaluadorComponent } from './ComiteE/Consultar/consx1-evaluador/consx1-evaluador.component';
 
 
 
@@ -115,6 +117,8 @@ import { FiltroEvaluadorPipe } from './ComiteE/pipe/filtro-evaluador.pipe';
     HeaderComponent,
     FiltroDocentePipe,
     FiltroEvaluadorPipe,
+    Consx1DocenteComponent,
+    Consx1EvaluadorComponent,
 
   ],
   imports: [
@@ -186,7 +190,12 @@ import { FiltroEvaluadorPipe } from './ComiteE/pipe/filtro-evaluador.pipe';
         path: 'menuDocente', component: MenuDocenteComponent,
         children: [
 
+          
           { path: 'home', component: HomeComponent },
+          { path: 'regSolicitud', component: RegSolicitudComponent },
+          { path: 'modDocente', component: ModDocenteComponent },
+          { path: 'consx1Docente', component: Consx1DocenteComponent },
+          
           
         ]
       },
@@ -196,6 +205,8 @@ import { FiltroEvaluadorPipe } from './ComiteE/pipe/filtro-evaluador.pipe';
         children: [
 
           { path: 'home', component: HomeComponent },
+          { path: 'consx1Evaluador', component: Consx1EvaluadorComponent },
+          { path: 'modEvaluador', component: ModEvaluadorComponent },
           
         ]
       },

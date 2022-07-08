@@ -5,11 +5,12 @@ import { DocenteService } from '../../services/docente.service';
 import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
-  selector: 'app-mod-docente',
-  templateUrl: './mod-docente.component.html',
-  styleUrls: ['./mod-docente.component.css']
+  selector: 'app-consx1-docente',
+  templateUrl: './consx1-docente.component.html',
+  styleUrls: ['./consx1-docente.component.css']
 })
-export class ModDocenteComponent implements OnInit {
+export class Consx1DocenteComponent implements OnInit {
+
   docente: Docente;
   tipoIdentificacion = "";
   sexo = "";
@@ -18,12 +19,9 @@ export class ModDocenteComponent implements OnInit {
   maestria = "";
   doctorado = "";
 
-  
-  constructor(private usuarioService: UsuarioService,private docenteService: DocenteService,private modalService: NgbModal) { 
-  }
+  constructor(private usuarioService: UsuarioService,private docenteService: DocenteService,private modalService: NgbModal) { }
 
   ngOnInit() {
-
     this.docente =this.docenteService.BuscarDocente(this.usuarioService.BuscarUser().nombre_Usuario);
     this.tipoIdentificacion = this.docente.tipo_Identificacion;
     this.sexo = this.docente.sexo;
@@ -32,12 +30,6 @@ export class ModDocenteComponent implements OnInit {
     this.maestria = this.docente.maestria;
     this.doctorado = this.docente.doctorado;
     this.docente.tipo_Usuario = "Docente";
-  }
-
-  Modificar(){
-      this.docenteService.Modificar(this.usuarioService.BuscarUser().nombre_Usuario, this.docente);
-      this.usuarioService.ModificarUser(this.docente.password, this.docente.nombre_Usuario, this.docente.tipo_Usuario);
-      alert("Docente Modificado")
   }
 
 }

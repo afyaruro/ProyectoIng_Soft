@@ -15,7 +15,7 @@ export class EvaluadorService {
   
     
   get(): Evaluador[] {
-    return JSON.parse(localStorage.getItem('datos') || '[]');
+    return JSON.parse(localStorage.getItem('evaluador') || '[]');
   }
 /*
   GuardarAbono(abono: number, identificacion: string) {
@@ -46,6 +46,20 @@ export class EvaluadorService {
   }
 */
 
+
+getnameUser(name: string, password: string): boolean{
+
+  let evaluadores = this.get();
+
+  for (let i = 0; i < evaluadores.length; i++) {
+    if(evaluadores[i].nombre_Usuario == name && evaluadores[i].password == password ){
+        return true;
+    }
+
+  }
+  return false;
+}
+
   post(evaluador: Evaluador): string {
     let evaluadores: Evaluador[] = [];
     if (this.get() != null) {
@@ -58,9 +72,52 @@ export class EvaluadorService {
       }
     }
         evaluadores.push(evaluador);
-        localStorage.setItem('datos', JSON.stringify(evaluadores));
+        localStorage.setItem('evaluador', JSON.stringify(evaluadores));
         return "Evaluador Registrado";
       }
+
+
+      BuscarEvaluador(nameUser: string):Evaluador{
+
+        let evaluadoresUser = this.get();
+        let evaluador = evaluadoresUser.findIndex(element => element.nombre_Usuario === nameUser)
+    
+            return evaluadoresUser[evaluador];
+            
+        }
+
+        Modificar(nameUser: string, evaluad:Evaluador) {
+
+          let  evaluadoresUser = this.get();
+          let evaluadores: Evaluador[] = [];
+          let evaluador = evaluadoresUser.findIndex(element => element.nombre_Usuario === nameUser)
+      
+          for (let i = 0; i < evaluadoresUser.length; i++) {
+            if (evaluadoresUser[i] !== evaluadoresUser[evaluador]) {
+              evaluadores[i] = evaluadoresUser[i];
+            }else{
+              evaluadoresUser[i].apellidos = evaluad.apellidos;
+              evaluadoresUser[i].correo = evaluad.correo;
+              evaluadoresUser[i].estado = evaluad.estado;
+              evaluadoresUser[i].sexo = evaluad.sexo;
+              evaluadoresUser[i].password= evaluad.password;
+              evaluadoresUser[i].tipo_Usuario = evaluad.tipo_Usuario;
+              evaluadoresUser[i].identificacion = evaluad.identificacion;
+              evaluadoresUser[i].nombre_Usuario = evaluad.nombre_Usuario;
+              evaluadoresUser[i].nombres = evaluad.nombres;
+              evaluadoresUser[i].tipo_identificacion = evaluad.tipo_identificacion;
+              evaluadores[i] = evaluadoresUser[i];
+            }
+          }
+
+          localStorage.removeItem('evaluador');
+      
+          for (let i = 0; i < evaluadores.length; i++) {
+            this.post(evaluadores[i]);
+          }
+        }
+
+
 
 
   // baseUrl: string;

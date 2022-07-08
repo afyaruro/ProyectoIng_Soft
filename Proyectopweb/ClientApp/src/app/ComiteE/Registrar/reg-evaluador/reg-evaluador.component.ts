@@ -14,12 +14,14 @@ export class RegEvaluadorComponent implements OnInit {
   evaluador: Evaluador;
   tipoIdentificacion = "Tipo de Identificacion";
   sexo = "Sexo";
+  estado = "Estado";
 
   constructor(private evaluadorService: EvaluadorService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.evaluador = new Evaluador();
     this.evaluador.tipo_Usuario = "Evaluador";
+    this.evaluador.estado = "Activo";
   }
 
   add(){

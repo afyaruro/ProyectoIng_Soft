@@ -5,6 +5,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { HandleHttpErrorService } from '../../@base/handle-http-error.service';
 import { Docente } from '../models/docente';
+import { Usuario } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class DocenteService {
 
     
   get(): Docente[] {
-    return JSON.parse(localStorage.getItem('datos') || '[]');
+    return JSON.parse(localStorage.getItem('docente') || '[]');
   }
 /*
   GuardarAbono(abono: number, identificacion: string) {
@@ -43,6 +44,81 @@ export class DocenteService {
     }
   }
 */
+  Eliminar(nameUser: string) {
+
+    let docentesUser = this.get();
+    let docentes: Docente[] = [];
+    let docente = docentesUser.findIndex(element => element.nombre_Usuario === nameUser)
+
+    for (let i = 0; i < docentesUser.length; i++) {
+      if (docentesUser[i] !== docentesUser[docente]) {
+        docentes[i] = docentesUser[i];
+      }
+    }
+
+    localStorage.removeItem('docente');
+
+    for (let i = 0; i < docentes.length; i++) {
+      this.post(docentes[i]);
+    }
+  }
+
+  Modificar(nameUser: string, docent:Docente) {
+
+    let docentesUser = this.get();
+    let docentes: Docente[] = [];
+    let docente = docentesUser.findIndex(element => element.nombre_Usuario === nameUser)
+
+    for (let i = 0; i < docentesUser.length; i++) {
+      if (docentesUser[i] !== docentesUser[docente]) {
+        docentes[i] = docentesUser[i];
+      }else{
+        docentesUser[i].correo = docent.correo;
+        docentesUser[i].departamento = docent.departamento;
+        docentesUser[i].direccion = docent.direccion;
+        docentesUser[i].doctorado = docent.doctorado;
+        docentesUser[i].especializacion = docent.especializacion;
+        docentesUser[i].facultad = docent.facultad;
+        docentesUser[i].identificacion = docent.identificacion;
+        docentesUser[i].maestria = docent.maestria;
+        docentesUser[i].municipio = docent.municipio;
+        docentesUser[i].nombre_Usuario = docent.nombre_Usuario;
+        docentesUser[i].nombres = docent.nombres;
+        docentesUser[i].numero_Celular = docent.numero_Celular;
+        docentesUser[i].password = docent.password;
+        docentesUser[i].primer_Apellido = docent.primer_Apellido;
+        docentesUser[i].profesional = docent.profesional;
+        docentesUser[i].programa = docent.programa;
+        docentesUser[i].segundo_Apellido = docent.segundo_Apellido;
+        docentesUser[i].sexo = docent.sexo;
+        docentesUser[i].tipo_Identificacion = docent.tipo_Identificacion;
+        docentesUser[i].tipo_Usuario = docent.tipo_Usuario;
+        docentes[i] = docentesUser[i];
+      }
+    }
+
+    localStorage.removeItem('docente');
+
+    for (let i = 0; i < docentes.length; i++) {
+      this.post(docentes[i]);
+    }
+  }
+
+  
+  
+
+  getnameUser(name: string, password: string): boolean{
+
+    let docentes = this.get();
+
+    for (let i = 0; i < docentes.length; i++) {
+      if(docentes[i].nombre_Usuario == name && docentes[i].password == password ){
+          return true;
+      }
+
+    }
+    return false;
+  }
 
   post(docente: Docente): string {
     let docentes: Docente[] = [];
@@ -56,9 +132,19 @@ export class DocenteService {
       }
     }
         docentes.push(docente);
-        localStorage.setItem('datos', JSON.stringify(docentes));
+        localStorage.setItem('docente', JSON.stringify(docentes));
         return "Docente Registrado";
       }
+
+
+      BuscarDocente(nameUser: string):Docente{
+
+        let docentesUser = this.get();
+        let docente = docentesUser.findIndex(element => element.nombre_Usuario === nameUser)
+    
+            return docentesUser[docente];
+            
+        } 
 
 
 

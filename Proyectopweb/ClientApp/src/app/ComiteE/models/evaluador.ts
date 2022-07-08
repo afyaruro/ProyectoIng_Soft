@@ -7,4 +7,5 @@ export class Evaluador extends Usuario{
     identificacion:string;
     sexo: string;
     correo: string;
+    estado: string;
 }
